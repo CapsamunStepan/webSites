@@ -1,0 +1,134 @@
+﻿@using System.Web.Optimization
+@using Qitchen.Web.Extensions
+
+@* You can’t eat the mochi in the picture. *@
+<!--====== Start Header ======-->
+<header class="header-area page-header transparent-header">
+    <div class="top-bar text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="top-left">
+                        <span class="text">@ViewBag.Phrase</span>
+                        <!-- Translation: Do not spend your days daydreaming about fantasies. No matter how good the imagination, reality is what counts. -->
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="top-right d-flex align-items-center justify-content-lg-end">
+                        <span class="text"><i class="fa fa-envelope"></i>Subscribe & Get 10% Off</span>
+                        <ul class="social-link">
+                            <li><a href="https://www.facebook.com"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=== Header Navigation ===-->
+    <div class="header-navigation navigation-two navigation-white">
+        <div class="nav-overlay"></div>
+        <div class="container-fluid">
+            <!--=== Primary Menu ===-->
+            <div class="primary-menu">
+                <!--=== Site Branding ===-->
+                <div class="site-branding">
+                    <a href="@Url.Action("Index", "Pages")" class="brand-logo">
+                        <img src="../Content/images/logo/logo-white.png"
+                             alt="Site Logo">
+                    </a>
+                </div>
+                <!--=== Nav Inner Menu ===-->
+                <div class="nav-inner-menu">
+                    <div class="nav-menu">
+                        
+                        <!--=== Main Menu ===-->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="menu-item has-children">
+                                    <a href="#">Menu</a>
+                                    <ul class="sub-menu">
+                                        <li>@Html.ActionLink("Menu Fastfood", "Details", "Menu", new { id = "seafood" }, new { })</li>
+                                        <li>@Html.ActionLink("Menu Fastfood", "Details", "Menu", new { id = "fastfood" }, new { })</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    @Html.ActionLink("About", "About", "Pages")
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li>@Html.ActionLink("Our Products", "Products", "Pages")</li>
+                                        <li>@Html.ActionLink("Shopping Cart", "Cart", "Pages")</li>
+                                        <li>@Html.ActionLink("Checkout", "Checkout", "Pages")</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item has-children">
+                                    <a href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li>@Html.ActionLink("Our Gallery", "Gallery", "Pages")</li>
+                                        <li>@Html.ActionLink("Our Chefs", "Chefs", "Pages")</li>
+                                        <li>@Html.ActionLink("Reservations", "Reservations", "Pages")</li>
+                                        <!--=== <li><a href="404.html">404</a></li>===-->
+                                        <li>@Html.ActionLink("FAQ", "Faq", "Pages")</li>
+                                        <li>@Html.ActionLink("Contact", "Contact", "Pages")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--=== Nav Button ===-->
+                        <div class="menu-button mt-40 d-xl-none">
+                            <a href="Contact.cshtml" class="main-btn btn-red">
+                                Book a Table<i class="fa fa-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!--=== Nav right Item ===-->
+                    <div class="nav-right-item d-flex align-items-center">
+                        <div class="search-button">
+                            <div class="search-btn" data-bs-toggle="modal" data-bs-target="#search-modal">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+
+                        @if (Session.IsUserLoggedIn())
+                        {
+                        }
+                        else
+                        {
+                            <!--Кнопка - триггер модального окна -->
+                            <button type = "button" class="main-btn btn-red">
+                                @Html.ActionLink("Registration", "Registration", "Pages")
+                            </button>
+
+                            <div class="menu-button d-xl-block d-none">
+                                <button type="button" class="main-btn btn-red">
+                                    @Html.ActionLink("Login", "Login", "Pages")
+                                </button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header><!--====== End Header ======-->
+<!--====== Start Breadcrumb Section ======-->
+<section class="page-banner light-red-bg p-r z-1 bg_cover"
+         style="background-image: url('../Content/images/bg/page-bg-1.jpg');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center wow fadeInDown">
+                    <h1 class="page-title">@ViewBag.Title</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li>@Html.ActionLink("Home", "Index", "Pages")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--====== End Breadcrumb Section ======-->

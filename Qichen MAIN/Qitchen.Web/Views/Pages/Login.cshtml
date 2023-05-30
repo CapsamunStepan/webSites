@@ -1,0 +1,49 @@
+﻿@model Qitchen.Web.Models.LoginForm
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout_Reg_Log.cshtml";
+}
+
+<section class="h-100">
+    <div class="container h-100">
+        <div class="row justify-content-sm-center h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                <div class="text-center my-5">
+                </div>
+                <div class="card shadow-lg">
+                    <div class="card-body p-3">
+                        <h1 class="fs-4 card-title fw-bold mb-4"> Login </h1>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationMessage("")
+
+                            <div class="mb-3">
+                                @Html.LabelFor(x => x.Email)
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Email)
+                            </div>
+                            <div class="mb-3">
+                                @Html.LabelFor(x => x.Password)
+                                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Password)
+                            </div>
+                            <div class="align-items-center d-flex">
+                                <button class="btn btn-primary ms-auto">Login</button>
+                            </div>
+                        }
+                    </div>
+                    <div class="card-footer py-3 border-0">
+                        <div class="text-center">
+                            Don't have an account? <a href="@Url.Action("Registration", "Pages")" class="text-dark">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5 text-muted">
+                    Copyright &copy; 2023 &mdash; UTMFood
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
