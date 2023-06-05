@@ -21,7 +21,10 @@ namespace Qitchen.BusinessLogic.Service
 		{
 			var passHash = AuthHelper.GeneratePasswordHash(data.Password);
 
-			var user = DbContext.Users.FirstOrDefault(x => x.Email == data.Email && x.PasswordHash == passHash);
+			var user = DbContext.Users.FirstOrDefault(x => 
+					(x.Email == data.Email || x.Name == data.Email) && 
+					x.PasswordHash == passHash
+				);
 			if (user == null)
 				return Failure<EntryServiceResponse<Session>>("User with this pair not found.");
 

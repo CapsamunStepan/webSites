@@ -1,5 +1,7 @@
 ﻿using Qitchen.BusinessLogic.Service;
+using Qitchen.Domain.Entities;
 using Qitchen.Filters;
+using Qitchen.Web.Extensions;
 using Qitchen.Web.Models;
 using System;
 using System.Web;
@@ -9,14 +11,6 @@ namespace Qitchen.Web.Controllers
 {
     public class PagesController : BaseController
     {
-        // This action is only available if registered used has 
-        // permission.
-        [RequireUserRole(Domain.Entities.UserRole.User)]
-        public ActionResult PermTest()
-        {
-            return View();
-        }
-
         public ActionResult Login()
         {
             return View();
@@ -83,7 +77,11 @@ namespace Qitchen.Web.Controllers
                     var loginStatus = authService.Register(data);
                     if (loginStatus.Success)
                     {
-                        return RedirectToAction("Login");
+                        return Login(new LoginForm 
+                        { 
+                            Email = form.Email,
+                            Password = form.Password,
+                        });
                     }
 
                     ModelState.AddModelError("", loginStatus.Message);
@@ -91,6 +89,21 @@ namespace Qitchen.Web.Controllers
             }
 
             return View(form);
+        }
+
+        public ActionResult Logout()
+        {
+            // Clear session cookie.
+            var cookie = Request.Cookies[SESSION_COOKIE_NAME];
+            if (cookie != null)
+            {
+                // Force expire.
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(cookie);
+            }
+
+            Session.ClearUser();
+            return Redirect("/");
         }
 
         public ActionResult Index()
@@ -142,6 +155,8 @@ namespace Qitchen.Web.Controllers
         {
             return View();
         }
+
+        [RequireUserRole(UserRole.User)]
         public ActionResult Reservations()
         {
             return View();

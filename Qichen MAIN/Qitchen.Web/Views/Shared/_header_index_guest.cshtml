@@ -110,6 +110,12 @@
                             <span>
                                 User: @Session.GetUser().Name
                             </span>
+
+                            <div class="menu-button d-xl-block d-none">
+                                <button type="button" class="main-btn btn-red">
+                                    @Html.ActionLink("Logout", "Logout", "Pages")
+                                </button>
+                            </div>
                         }
                         else
                         {

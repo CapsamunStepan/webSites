@@ -17,6 +17,7 @@ namespace Qitchen.Web.Models
 		[Required]
 		[MaxLength(32)]
 		[DataType(DataType.Password)]
+		[Compare("Password")]
 		public string PasswordConfirm { get; set; }
 	}
 }

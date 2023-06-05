@@ -26,7 +26,7 @@
                             </div>
                             <div class="mb-3">
                                 @Html.LabelFor(x => x.Password)
-                                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                                @Html.TextBoxFor(x => x.Password, new { @class = "form-control", type="password" })
                                 @Html.ValidationMessageFor(x => x.Password)
                             </div>
                             <div class="align-items-center d-flex">
