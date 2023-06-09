@@ -1,0 +1,9 @@
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\bin\Debug\net472\Qitchen.Helpers.dll
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\bin\Debug\net472\Qitchen.Helpers.pdb
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.csproj.AssemblyReference.cache
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.AssemblyInfoInputs.cache
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.AssemblyInfo.cs
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.dll
+C:\Users\Utilizador\Desktop\2\webSites\Qichen MAIN\Qitchen.Helpers\obj\Debug\net472\Qitchen.Helpers.pdb
