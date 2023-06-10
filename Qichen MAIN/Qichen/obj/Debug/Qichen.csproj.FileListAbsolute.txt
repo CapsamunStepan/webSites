@@ -1,3 +1,0 @@
-C:\Users\djuls\Documents\code\Qichen\obj\Debug\Qichen.csproj.AssemblyReference.cache
-C:\Users\djuls\Documents\code\Qichen\obj\Debug\Qichen.csproj.SuggestedBindingRedirects.cache
-C:\Users\djuls\Documents\code\Qichen\obj\Debug\Qichen.csproj.CoreCompileInputs.cache
