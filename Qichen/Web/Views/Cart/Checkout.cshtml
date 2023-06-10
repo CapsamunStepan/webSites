@@ -1,0 +1,97 @@
+﻿@model Domain.CartItemsModel
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+@using (Html.BeginForm("Payment", "Cart", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <!--====== Start Checkout Section ======-->
+    <section class="checkout-page pt-125 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="checkout-form" name="checkout_form" class="contact-form-one rmb-35">
+                        <h3 class="from-title mb-25">Order Confirmation</h3>
+                        <hr>
+                        <div class="row mt-35">
+                            <div class="col-md-6">
+                                <div class="form_group">
+                                    <input type="text" id="first-name" name="first_name" class="form_control" value="" placeholder="First Name" required="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form_group">
+                                    <input type="text" id="last-name" name="last_name" class="form_control" value="" placeholder="Last Name" required="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form_group">
+                                    <input type="text" id="number" name="number" class="form_control" value="" placeholder="Phone Number" required="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form_group">
+                                    <input type="email" id="emailAddress" name="email" class="form_control" value="" placeholder="Email Address" required="">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <h5 class="mb-15">Your Address</h5>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form_group">
+                                    <input type="text" id="city" name="city" class="form_control" value="" placeholder="City" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form_group">
+                                    <input type="text" id="street-name" name="street_name" class="form_control" value="" placeholder="House, street name" required>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="payment-method" name="payment-method" class="checkout-form mb-30">
+                        <h3 class="from-title mb-25">Order Summary</h3>
+                        <hr>
+                        <div class="package-summary mt-35 mb-25">
+                            <table>
+                                <tbody>
+                                    @foreach (var item in Model.cartItems)
+                                    {
+                                        <tr>
+                                            <td>@item.item.Item_Name <strong>× @item.itemAmount</strong></td>
+                                            <td>$@(item.item.Item_Price * item.itemAmount)</td>
+                                        </tr>
+
+                                    }
+                                    <tr>
+                                        <td><strong>Order Total</strong></td>
+                                        <td><strong>$@Model.TotalPrice</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h5 class="title mt-20 mb-15">Payment Method</h5>
+                        <div class="form_group">
+                            <select class="form_control" name="payment" id="payment">
+                                <option value="Cash">Choose an Option</option>
+                                <option value="Cash">cash on delivey</option>
+                                <option value="Bank Transfter">Bank Transfer</option>
+                                <option value="Paypal">Paypal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="main-btn btn-red mt-25 w-100">Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== End Checkout Section ======-->
+}

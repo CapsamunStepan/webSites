@@ -1,0 +1,54 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--====== Title ======-->
+    <title>Qichen - Restaurant HTML Template</title>
+
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/jquery/css")
+    @Styles.Render("~/bundles/jquery-ui.theme/css")
+    @Styles.Render("~/bundles/font-awesome/css")
+    @Styles.Render("~/bundles/flaticon/css")
+    @Styles.Render("~/bundles/animate/css")
+    @Styles.Render("~/bundles/magnific-popup/css")
+    @Styles.Render("~/bundles/nice-select/css")
+    @Styles.Render("~/bundles/Site/css")
+    @Styles.Render("~/bundles/slick/css")
+    @Styles.Render("~/bundles/default/css")
+    @Styles.Render("~/bundles/style/css")
+    @Styles.Render("~/bundles/_cart-checkout/css")
+
+</head>
+
+<body>
+    @Html.Partial("_preloader")
+    @Html.Partial("_searchFrom")
+
+    @RenderBody()
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/jquery-counterup/js")
+    @Scripts.Render("~/bundles/jquery-waypoints/js")
+    @Scripts.Render("~/bundles/jquery-nice-select/js")
+    @Scripts.Render("~/bundles/jquery-nice-number/js")
+    @Scripts.Render("~/bundles/isotope/js")
+    @Scripts.Render("~/bundles/imagesloaded/js")
+    @Scripts.Render("~/bundles/jquery-ui/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+    @Scripts.Render("~/bundles/popper/js")
+    @Scripts.Render("~/bundles/modernizr/js")
+    @Scripts.Render("~/bundles/wow/js")
+    @Scripts.Render("~/bundles/slick/js")
+    @Scripts.Render("~/bundles/theme/js")
+
+</body>
+</html>

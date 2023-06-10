@@ -1,0 +1,48 @@
+﻿@model Domain.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout_Reg_Log.cshtml";
+}
+@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                    <div class="text-center my-5">
+                    </div>
+                    <div class="card shadow-lg">
+                        <div class="card-body p-3">
+                            <h1 class="fs-4 card-title fw-bold mb-4"> Login </h1>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">User Name\Email address:</label>
+                                    @Html.EditorFor(model => model.UserLogin, new { htmlAttributes = new { @class = "nickname", @id = "nick" } })
+                                    @*<input type="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="background-color:#FDF5F2;">*@
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password:</label>
+                                    @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputPassword1" } })
+                                    @*<input type="password" class="form-control" id="exampleInputPassword1" style="background-color:#FDF5F2;">*@
+                                    <div id="emailHelp" class="form-text">We'll never share your pass with anyone else.</div>
+                                </div>
+                                <div class="align-items-center d-flex">
+                                    <button type="sub" class="btn btn-primary ms-auto"> @Html.ActionLink("Login", "Index", "Pages")  </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer py-3 border-0">
+                            <div class="text-center">
+                                Don't have an account? <a href="@Url.Action("Registration", "Login")" class="text-dark">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 text-muted">
+                        Copyright &copy; 2023 &mdash; UTMFood
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

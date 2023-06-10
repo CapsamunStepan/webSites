@@ -1,0 +1,55 @@
+﻿@model Domain.ItemsAndPersonalDataModel
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+
+<!--====== Start Checkout Section ======-->
+<section class="checkout-page pt-125 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <h5>THANK YOU FOR YOUR PURCHASE<br />HERE ARE YOUR ORDER DETAILS:</h5>
+
+                <h1>Number=@Model.Number</h1>
+                <h1>Name=@Model.Name</h1>
+                <h1>SurName=@Model.Surname</h1>
+                <h1>City=@Model.City</h1>
+                <h1>Email=@Model.Email</h1>
+                <h1>Payment=@Model.Payment</h1>
+                <h1>Street=@Model.Street_name</h1>
+
+            </div>
+
+            <div class="col-lg-4">
+                <div id="payment-method" name="payment-method" class="checkout-form mb-30">
+                    <h3 class="from-title mb-25">Order Summary</h3>
+                    <hr>
+                    <div class="package-summary mt-35 mb-25">
+                        <table>
+                            <tbody>
+                                @foreach (var item in Model.Model.cartItems)
+                                {
+                                    <tr>
+                                        <td>@item.item.Item_Name <strong>× @item.itemAmount</strong></td>
+                                        <td>$@(item.item.Item_Price * item.itemAmount)</td>
+                                    </tr>
+
+                                }
+                                <tr>
+                                    <td><strong>Order Total</strong></td>
+                                    <td><strong>$@Model.Model.TotalPrice</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== End Checkout Section ======-->

@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+<!--====== Start Gallery Section ======-->
+<section class="gallery-section pt-120 pb-90" id="gallery-filter">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-10">
+                <div class="section-title text-center mb-50 wow fadeInUp">
+                    <span class="sub-title">photo gallery</span>
+                    <h2>Look Inside Photo Gallery</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="gallery-filter-button text-center mb-60 wow fadeInDown">
+                    <ul class="filter-btn">
+                        <li class="active" data-toggle="portfilter">Show All</li>
+                        <li data-filter=".cat-1">Fastfood</li>
+                        <li data-filter=".cat-2">Seafoods</li>
+                        <li data-filter=".cat-3">Drink & Juice</li>
+                        <li data-filter=".cat-4">Coffee</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row gallery-row">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-1">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-5.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Hamburger</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-1">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-6.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Pizza</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-1">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-7.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Vegetable Roll</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-3">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-8.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Organic Juice</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-1">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-9.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Sandwich</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-1">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-10.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Soup</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-1">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-11.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Hot Dogs</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-4">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-12.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Latte</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-3">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-13.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Vodka</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-2">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-14.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuSeaFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Lobster</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-4">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-15.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuFastFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Americano</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-column cat-2">
+                <div class="gallery-item-two mb-35 wow fadeInUp">
+                    <div class="gallery-img">
+                        <img src="~/Content/images/gallery/gallery-16.png" alt="Gallery Image">
+                        <div class="hover-overlay">
+                            <a href="@Url.Action("MenuSeaFood", "Pages")" class="icon-btn"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="gallery-content text-center">
+                        <h3 class="title">Fish Fry</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--====== End Gallery Section ======-->

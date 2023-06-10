@@ -1,0 +1,63 @@
+﻿@model BusinessLogic.DB.Item
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/LayoutControl.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    if (ViewBag.Title == "Edit")
+    {
+        @Html.HiddenFor(model => model.Item_ID)
+    }
+
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                    <div class="text-center my-5">
+                    </div>
+                    <div class="card shadow-lg">
+                        <div class="card-body p-3">
+                            <h1 class="fs-4 card-title fw-bold mb-4">Admin Panel</h1>
+
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Load photo</label>
+                                <input type="file" name="itemPhoto" value="@Model.Item_Image" class="form-control" id="exampleInputEmail1" style="background-color:#FDF5F2;" placeholder=@Model.Item_Image>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Product name</label>
+                                <input type="text" name="itemName" value="@Model.Item_Name" class="form-control" id="exampleInputEmail1" style="background-color:#FDF5F2;" placeholder="@Model.Item_Name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Product price</label>
+                                <input type="text" name="itemPrice" value="@Model.Item_Price" class="form-control" id="exampleInputPassword1" style="background-color:#FDF5F2;" placeholder="@Model.Item_Price">
+                            </div>
+
+                            <div class="alert fade show cart-single-item">
+                                <input type="submit" value="@ViewBag.Title" class="btn btn-primary ms-auto" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="@ViewBag.Title" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

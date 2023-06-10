@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Reservation";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+@using (Html.BeginForm("Sucess", "Rezervation", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <!--====== Start Reservation Section ======-->
+    <section class="reservation-section pt-130 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="reservation-img wow fadeInLeft mb-50">
+                        <img src="~/Content/images/contact/contact-5.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="reservation-content-box wow fadeInRight mb-50">
+                        <div class="section-title text-center mb-30">
+                            <span class="sub-title">Booking table</span>
+                            <h2>Make A Reservations</h2>
+                        </div>
+                        <div class="reservation-style-four">
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-6">
+                                    <div class="form_group">
+                                        <label><i class="fa fa-user"></i></label>
+                                        <input type="text" class="form_control" placeholder="Person" name="number" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form_group">
+                                        <label><i class="fa fa-phone"></i></label>
+                                        <input type="text" class="form_control" placeholder="Phone No" name="phone" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form_group">
+                                        <label><i class="fa fa-calendar-alt"></i></label>
+                                        <input type="text" id="datepicker" class="form_control" placeholder="Reserved Date" name="date" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form_group">
+                                        <select class="wide" name="time">
+                                            <option data-display="Reservation Time">Reservation Time</option>
+                                            <option value="9:00:00">9.00 Am</option>
+                                            <option value="9:00:00">9.30 Am</option>
+                                            <option value="10:00:00">10.00 Am</option>
+                                            <option value="10:30:00">10.30 Am</option>
+                                            <option value="11:00:00">11.00 Am</option>
+                                            <option value="11:30:00">11.30 Am</option>
+                                            <option value="12:00:00">12.00 Pm</option>
+                                            <option value="12:30:00">12.30 Pm</option>
+                                            <option value="13:00:00">01.00 Pm</option>
+                                            <option value="13:30:00">01.30 Pm</option>
+                                            <option value="14:00:00">02.00 Pm</option>
+                                            <option value="14:30:00">02.30 Pm</option>
+                                            <option value="15:00:00">03.00 Pm</option>
+                                            <option value="15:30:00">03.30 Pm</option>
+                                            <option value="16:00:00">04.00 Pm</option>
+                                            <option value="16:30:00">04.30 Pm</option>
+                                            <option value="17:00:00">05.00 Pm</option>
+                                            <option value="17:30:00">05.30 Pm</option>
+                                            <option value="18:00:00">06.00 Pm</option>
+                                            <option value="18:30:00">06.30 Pm</option>
+                                            <option value="19:00:00">07.00 Pm</option>
+                                            <option value="19:30:00">07.30 Pm</option>
+                                            <option value="20:00:00">08.00 Pm</option>
+                                            <option value="20:30:00">08.30 Pm</option>
+                                            <option value="21:00:00">09.00 Pm</option>
+                                            <option value="21:30:00">09.30 Pm</option>
+                                            <option value="22:00:00">10.00 Pm</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-8">
+                                    <div class="form_group">
+                                        <button class="main-btn btn-red">book a table <i class="fa fa-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--====== End Reservation Section ======--><!--====== Start Map Section ======--><section class="map-section pb-130 wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="map-box">
+                        <iframe src="https://maps.google.com/maps?q=new%20york&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--====== End Map Section ======-->
+}

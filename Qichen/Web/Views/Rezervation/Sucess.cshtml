@@ -1,0 +1,18 @@
+﻿@model Domain.BookedModel
+@{
+    ViewBag.Title = "Reservation";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+<section class="reservation-section pt-130 pb-80">
+    <div class="container">
+
+        <div>
+            <h2>Sucess</h2>
+            <h3 style="color:black">Number of persons:@Model.number</h3>
+            <h3 style="color:black">Time:@Model.time</h3>
+            <h3 style="color:black">Date:@Model.date</h3>
+            <h3 style="color:black">Your Phone:@Model.phone</h3>
+
+        </div>
+    </div>
+</section>

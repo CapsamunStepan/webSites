@@ -1,0 +1,61 @@
+﻿@model Domain.CartItemsModel
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_LayoutAll.cshtml";
+}
+
+<!--====== Start Shopping Cart Section ======-->
+<section class="cart-page pt-125 pb-125">
+    <div class="container">
+        @if (Model != null)
+        {
+            <div class="cart-total-product">
+                <div class="total-cart-price">
+                    <h5>Total Items: @TempData["amountTotal"]</h5>
+                    <h5>Cart Total: $@Model.TotalPrice</h5>
+                </div>
+                <div class="cart-item-wrap">
+
+                    @foreach (var data in Model.cartItems)
+                    {
+                        <div class="alert fade show cart-single-item">
+                            <h6 class="product-name">@data.item.Item_Name</h6>
+                            <span class="product-price">$@data.item.Item_Price</span>
+                            <div class="quantity-input">
+                                @using (Html.BeginForm("Decrement", "Cart", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <input type="hidden" value="@Model.Cart_ID " name="Cart_ID" />
+                                    <input type="hidden" value=@data.item.Item_ID name="Item_ID" />
+                                    <input type="submit" value="-" name="decrement" />
+                                }
+                                @*<input type="number" min="1" max="10" value=@data.itemAmount>*@
+                                <h5 style="padding:0 10px 0 10px;">@data.itemAmount</h5>
+                                @using (Html.BeginForm("Increment", "Cart", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <input type="hidden" value="@Model.Cart_ID " name="Cart_ID" />
+                                    <input type="hidden" value=@data.item.Item_ID name="Item_ID" />
+                                    <input type="submit" value="+" name="increment" />
+                                }
+                            </div>
+                            <span class="product-total-price">$@(data.item.Item_Price * data.itemAmount)</span>
+                            @Html.ActionLink("x", "Delete", new { id = data.item.Item_ID }, new { @class = "close" })
+                            @*<input type="submit" class="close" data-bs-dismiss="alert" value="x">*@<!--<input type="submit" class="close" data-bs-dismiss="alert" value="x">-->
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="cart-total-price mt-40">
+                <div class="row justify-content-end text-center text-lg-left">
+                    <div class="col-lg-6">
+                        <div class="update-shopping text-lg-end">
+                            <p class="main-btn btn-black mt-10">Total Price:<br />$@Model.TotalPrice<i class="fa fa-arrow-right"></i></p>
+                            <a href="@Url.Action("Checkout", "Cart")" class="main-btn btn-red mt-10">Checkout<i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!--====== End Shopping Cart Section ======-->

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<BusinessLogic.DB.Item>
+
+@{
+    ViewBag.Title = "AdminControls";
+    Layout = "~/Views/Shared/LayoutControl.cshtml";
+}
+
+<h2>AdminControls</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Image)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model)
+{
+
+    <!--====== Start Shopping Cart Section ======-->
+    <section class="cart-page pt-125 pb-125">
+        <div class="container">
+            <div class="cart-total-product">
+                <div class="total-cart-price">
+                    <h5>All Items</h5>
+                </div>
+                <div class="cart-item-wrap">
+
+                    <div class="alert fade show cart-single-item">
+                        <h6 class="product-name">@item.Item_Name</h6>
+                        <span class="product-price">$@item.Item_Price</span>
+                        <div class="product-thumbnail">
+                            <img src=@item.Item_Image width=122; height=41; alt="Product Image">
+                        </div>
+
+                        <p style="color:#0000ff;"> @Html.ActionLink("Edit", "Edit", new { id = item.Item_ID })</p>
+                        <p style="color:#0000ff;"> @Html.ActionLink("Delete", "Delete", new { id = item.Item_ID })</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== End Shopping Cart Section ======-->
+}
+
+@*<td>
+        @Html.DisplayFor(modelItem => item.Item_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Item_Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Item_Image)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Item_ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Item_ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Item_ID })
+    </td>*@
+@*</table>*@
+
+
